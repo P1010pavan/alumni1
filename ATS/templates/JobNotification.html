@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <script data-ad-client="ca-pub-6693151218213658" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>AlumniTrackingSystem</title>
+
+  </head>
+  {% load static %}
+        <style>
+
+.card-group{
+margin:0.5%;
+padding:auto;
+
+}
+.card-img-top{
+width:85%;
+margin:5%;
+
+
+}
+.card{
+margin:0.6%;
+width:auto;
+height:auto;
+background:black;
+}
+.pos-f-t{
+margin:0.4%;
+}
+.nav-link{
+font-size:20px;
+}
+.card-title{
+color:#ffffff;
+}
+.WebContainer{
+    width:100%;
+    min-width:1000px;
+    height:auto;
+
+}
+.modal-title{
+color:#ffffff;
+font-weight:bold;
+}
+.acc{
+color:#ffffff;
+font-weight:bold;
+}
+.modal-header{
+background-color:black;
+font-weight:bold;
+}
+.modal-body{
+background-color:black;
+font-weight:bold;
+}
+.navbar{
+margin:0.4%;
+}
+
+  </style>
+  <body>
+  <div class="WebContainer">
+<div class="pos-f-t">
+  <div class="collapse" id="navbarToggleExternalContent">
+    <div class="bg-black p-4" style="background-color:#000000;">
+      <li class="nav-link">
+    <a href="/">Home</a>
+        </li>
+            <li class="nav-item active">
+        <a class="nav-link" href="/jobUpload.html/">Upload</a>
+      </li>
+
+     <li class="nav-item active">
+  <a class="nav-link" style="color:#3377ff;" data-toggle="modal" data-target="#myModal">
+  Account</a>
+  <div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Account</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <h5 class="acc">Username : {{ request.user.username }}</h5>
+        </div>
+
+         <div class="modal-body">
+           <h5 class="acc">Email  : {{ request.user.email }}</h5>
+         </div>
+      </div>
+    </div>
+  </div>
+      </li>
+
+      <li class="nav-item active">
+        <a class="nav-link" href="/contactus.html/">Contact Us</a>
+      </li>
+
+      <li class="nav-item active">
+        <a class="nav-link" href="/aboutus.html/">About Us</a>
+      </li>
+    </ul>
+  </div>
+    </div>
+  </div>
+  <nav class="navbar navbar-dark" style="background-color:#000000;">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </nav>
+</div>
+{% for Job_upload in Job_upload %}
+<div class="card mb-3" style="max-width: 100%;">
+  <div class="row no-gutters">
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title" style="color:#00ff00;">{{Job_upload.Title}}</h5>
+        <p class="card-text" style="color:white;">{{Job_upload.Description}}</p>
+        <br><br><br><br><br>
+        <p class="card-text" style="color:white;"><small class="text">Name : {{ Job_upload.Roll}}</small></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endfor %}
+
+  </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>
