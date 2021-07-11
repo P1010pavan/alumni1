@@ -1,1 +1,1 @@
-web: gunicorn alumni.wsgi --log-file-
+web: gunicorn alumni.wsgi --log-file -
